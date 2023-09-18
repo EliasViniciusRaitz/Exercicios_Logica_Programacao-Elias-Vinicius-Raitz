@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--
+        1. Faça um programa que leia o nome de uma pessoa e mostre uma mensagem de boas vindas para ela:  
+~~~
+    Ex:   
+        Qual é o seu nome? João da Silva  
+        Olá João da Silva, é um prazer te conhecer!  
+~~~
+-->
+</head>
+
+<body>
+
+    <main>
+        <form action="">
+            <input type="text" id="idNome" placeholder="Qual é o seu nome?">
+            <input type="button" value="Confirmar" onclick="confirmar()">
+        </form>
+    </main>
+
+    <script>
+        function confirmar(){
+            var nome = document.getElementById("idNome").value
+            console.log("Olá " + nome + ", é um prazer te conhecer !!")
+        }
+    </script>
+</body>
+
+</html>

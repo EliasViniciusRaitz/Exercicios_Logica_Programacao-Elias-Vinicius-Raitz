@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!--
+    2. Crie um programa que leia o nome e o salário de um funcionário, mostrando no final uma mensagem.
+
+~~~
+    Ex:
+        Entrada: 
+            Nome do Funcionário: Maria do Carmo
+            Salário: 1850,45
+        Saída:
+            O funcionário Maria do Carmo tem um salário de R$1850,45 em Junho.
+~~~
+-->
+</head>
+<body>
+    <main>
+        <form action="">
+            <input type="text" id="idNome" placeholder="Digite o nome do funcionário:"><br><br>
+            <input type="number" id="idSalario" placeholder="Digite o salário do funcionário:"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()">
+        </form>
+    </main>
+
+    <script>
+
+        function confirmar(){
+            var nome = document.getElementById("idNome").value
+            var salario = document.getElementById("idSalario").value
+            console.log("O funcionário " + nome + ", tem um salário de R$" + salario)
+        }
+    </script>
+</body>
+</html>

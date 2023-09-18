@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+    8.  Faça um algoritmo que leia quanto dinheiro uma pessoa tem na carteira (em R$) e mostre quantos dólares ela pode comprar. 
+    Considere US$1,00 = R$3,45.
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idReal" placeholder="Quantos R$ você possui:"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idSaidaDolar"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar(){
+            var real = Number(document.getElementById("idReal").value)
+            var dolar = real / 3.45
+            document.getElementById("idSaidaDolar").value= "Você pode comprar U$" + dolar
+        }
+    </script>
+</body>
+
+</html>

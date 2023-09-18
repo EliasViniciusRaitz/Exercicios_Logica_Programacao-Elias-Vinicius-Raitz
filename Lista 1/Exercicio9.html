@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+9.  Faça um algoritmo que leia a largura e altura de uma parede, calcule e mostre a área a ser pintada e a quantidade de tinta 
+necessária para o serviço, sabendo que cada litro de tinta pinta uma área de 2 metros quadrados.
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idLargura" placeholder="Digite a largura da parede (m):"><br><br>
+            <input type="number" id="idAltura" placeholder="Digite a altura da parede (m):"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idAreaPintada"></output>
+            <output id="idQuantidadeTinta"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar(){
+            var largura = Number(document.getElementById("idLargura").value)
+            var altura = Number(document.getElementById("idAltura").value)
+            var areaPintada = largura * altura
+            var quantidadeTinta = areaPintada / 2
+            document.getElementById("idAreaPintada").value= "A área a ser pintada é " + areaPintada + " metros quadrados"
+            document.getElementById("idQuantidadeTinta").value= "A quantidade de tinta necessária para o serviço é " + quantidadeTinta + " L"
+        }
+    </script>
+</body>
+
+</html>

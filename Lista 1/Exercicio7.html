@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!---
+    7.  Desenvolva um programa que leia uma distância em metros e mostre os valores relativos em outras medidas.
+~~~
+    Ex:
+        Entrada:
+            Digite uma distância em metros: 185.72
+        Saída:
+            A distância de 185.72m corresponde a:
+            0.18572Km
+            1.8572Hm
+            18.572Dam
+            1857.2dm
+            18572.0cm
+            185720.0mm
+~~~
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idMetros" placeholder="Digite uma distância em metros:"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idSaidaQuilômetros"></output><br><br>
+            <output id="idSaidaHectômetros"></output><br><br>
+            <output id="idSaidaDecâmetros"></output><br><br>
+            <output id="idSaidaDecímetros"></output><br><br>
+            <output id="idSaidaCentímetros"></output><br><br>
+            <output id="idSaidaMilímetros"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar() {
+            var metros = Number(document.getElementById("idMetros").value)
+            var quilometros = metros / 1000
+            var hectometros = metros / 100
+            var decametros = metros / 10
+            var decimetros = metros * 10
+            var centimetros = metros * 100
+            var milimetros = metros * 1000
+            document.getElementById("idSaidaQuilômetros").value = quilometros + " Km"
+            document.getElementById("idSaidaHectômetros").value = hectometros + " Hm"
+            document.getElementById("idSaidaDecâmetros").value = decametros + " Dam"
+            document.getElementById("idSaidaDecímetros").value = decimetros + " Dm"
+            document.getElementById("idSaidaCentímetros").value = centimetros + " Cm"
+            document.getElementById("idSaidaMilímetros").value = milimetros + " Mm"
+        }
+    </script>
+</body>
+
+</html>

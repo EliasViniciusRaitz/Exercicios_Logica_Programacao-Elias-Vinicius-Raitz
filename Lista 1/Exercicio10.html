@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+10. Crie um programa que leia o preço de um produto, calcule e mostre o seu PREÇO PROMOCIONAL, com 5% de desconto.
+
+        desconto  = preco * 0.05 
+        precoPromocional = preco - desconto
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idPrecoProduto" placeholder="Digite o preço do produto:"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idPrecoPromocional"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar(){
+            var precoProduto = Number(document.getElementById("idPrecoProduto").value)
+            var precoPromocional = precoProduto - (precoProduto * 0.05)
+            document.getElementById("idPrecoPromocional").value= "O preço promocional do produto com desconto 5% é  R$" + precoPromocional
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!--
+    3.  Desenvolva um algoritmo que leia dois números inteiros e mostre o somatório entre eles.
+~~~
+    Ex:
+        Entrada: 
+            Digite um valor: 8
+            Digite outro valor: 5
+        Saída:
+            A soma entre 8 e 5 é igual a 13.
+~~~
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idPrimeiroNumero" placeholder="Digite um número:"><br><br>
+            <input type="number" id="idSegundoNumero" placeholder="Digite outro número:"><br><br>
+            <input type="button"value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idSaida"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar(){
+            var numero1 = Number(document.getElementById("idPrimeiroNumero").value)
+            var numero2 = Number(document.getElementById("idSegundoNumero").value)
+            var resultado = numero1 + numero2
+            document.getElementById("idSaida").value= "A soma entre " + numero1 + " e " + numero2 + " é igual a " + resultado
+        }
+    </script>
+</body>
+
+</html>
