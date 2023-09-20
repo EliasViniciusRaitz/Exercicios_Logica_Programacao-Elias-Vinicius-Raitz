@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!---
+10. Crie um programa para autenticação de usuários.
+
+- Salve 3 usuários em variáveis pré-inicializadas 
+
+|  userId   |    senha    |
+|-----------|:-----------:|
+| Aluno1    |  Trocar123  |
+| Aluno2    |  Senha@123  |
+| Aluno3    |  123Trocar  |
+
+- Regras
+-   Se o usuário informar o userId e senha corretamente o sistema deverá exibir a mensagem: 
+
+    **"Acesso Permitido"**
+
+-   Se o userId não estiver correto, exibir: 
+
+    **"Usuário não cadastrado"**
+
+-   Se o usuário estiver correto, mas a senha estiver errada, exibir:
+
+    **"Senha incorreta"**
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="text" id="idUsuario" placeholder="UserId:"><br><br>
+            <input type="text" id="idSenha" placeholder="Senha:"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idSaidaLogin"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar() {
+            let usuario = document.getElementById("idUsuario").value
+            let senha = document.getElementById("idSenha").value
+            if (usuario != "Aluno1" && usuario != "Aluno2" && usuario != "Aluno3" && senha != "Trocar123" && senha != "Senha@123" &&
+                senha != "123Trocar") {
+                document.getElementById("idSaidaLogin").value = "Usuário não cadastrado!!"
+            } else {
+                if ((usuario == "Aluno1" && senha == "Trocar123") || (usuario == "Aluno2" && senha == "Senha@123") || (usuario ==
+                        "Aluno3" && senha == "123Trocar")) {
+                            document.getElementById("idSaidaLogin").value = "Acesso Permitido!!"
+                } else {
+                    if ((usuario == "Aluno1" || usuario != "Aluno2" || usuario != "Aluno3") && senha != "Trocar123" && senha != 
+                    "Senha@123" && senha != "123Trocar") { document.getElementById("idSaidaLogin").value = "Senha incorreta!!"
+                    } else {
+                        document.getElementById("idSaidaLogin").value = " gfdfng!"
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

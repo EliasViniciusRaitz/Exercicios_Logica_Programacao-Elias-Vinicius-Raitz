@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+3. Elabore um algoritmo para Entrar com um número e imprimir uma das mensagens: 
+ 	maior do que 20, igual a 20 ou menor do que 20.
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idNumero" placeholder="Digite um número:"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idVerificar"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar(){
+            let numero = Number(document.getElementById("idNumero").value)
+            if(numero < 20){
+                document.getElementById("idVerificar").value= "O número " + numero + " é menor que 20."         
+            } else {
+                if(numero > 20){
+                    document.getElementById("idVerificar").value= "O número " + numero + " é maior que 20."
+                } else {
+                    document.getElementById("idVerificar").value= "O número " + numero + " é igual a 20."
+                }
+            }      
+        }
+    </script>
+</body>
+
+</html>

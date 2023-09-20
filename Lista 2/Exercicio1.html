@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+1. Elabore um algoritmo que permita a entrada de dois números diferentes e verifique qual deles é o maior.
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idPrimeiroNumero" placeholder="Digite um número:"><br><br>
+            <input type="number" id="idSegundoNumero" placeholder="Digite outro número:"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idMaior"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar(){
+            let primeiroNumero = Number(document.getElementById("idPrimeiroNumero").value)
+            let SegundoNumero = Number(document.getElementById("idSegundoNumero").value)
+            let maior
+            if(primeiroNumero > SegundoNumero){
+                maior = primeiroNumero           
+            } else {
+                maior = SegundoNumero
+            }
+            document.getElementById("idMaior").value= "O maior número é o " + maior
+        }
+    </script>
+</body>
+
+</html>

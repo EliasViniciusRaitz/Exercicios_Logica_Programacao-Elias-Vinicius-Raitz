@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+7. Entrar com o salário de uma pessoa e imprimir o Salário Líquido, segundo a tabela a seguir:
+   
+|  Salário Bruto                                   |   INSS   |
+|:-------------------------------------------------|:--------:|
+| Menor ou igual a R$600,00                        |  Isento  |
+| Maior que R$600,00 e menor ou igual a R$1200,00  |    25%   |
+| Maior que R$1200,00 e menor ou igual a R$2000,00 |    30%   |
+| Maior que R$2000,00                              |    35%   |	
+
+- O salário líquido é igual ao Salário Bruto menos o desconto de INSS.  
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idSalarioBruto" placeholder="Digite seu salário bruto:"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idSalarioLiquido"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar(){
+            let salarioBruto = Number(document.getElementById("idSalarioBruto").value)
+            let salarioLiquido
+            if(salarioBruto > 2000){
+                salarioLiquido = salarioBruto - (salarioBruto * 0.35)
+            } else {
+                if(salarioBruto >= 1200){
+                    salarioLiquido = salarioBruto - (salarioBruto * 0.3)
+                } else {
+                    if(salarioBruto > 600){
+                        salarioLiquido = salarioBruto - (salarioBruto * 0.25)
+                    } else {
+                        salarioLiquido = salarioBruto
+                    }
+                }
+            }
+            if(salarioLiquido == salarioBruto){
+                document.getElementById("idSalarioLiquido").value= "Seu salário é isento ao imposto do INSS, então seu salário é " + salarioLiquido
+            } else {
+                document.getElementById("idSalarioLiquido").value= "Seu salário liquido é " + salarioLiquido         
+            }
+        }
+    </script>
+</body>
+
+</html>

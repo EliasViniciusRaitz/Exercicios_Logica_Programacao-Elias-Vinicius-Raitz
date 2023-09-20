@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+9. Crie um programa para calcular a área das formas geométricas básicas:  
+a.	Círculo (pedir o raio);  
+b.	Retângulo (pedir a base e altura);  
+c.	Triangulo retângulo (pedir a base e altura);  
+d.	Triangulo Equilátero: pedir o lado.
+- O usuário deve poder escolher a forma geométrica que deseja calcular a partir de um menu.
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idPrecoProduto" placeholder="Digite o preço do produto:"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idPrecoVenda"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar(){
+            let precoProduto = Number(document.getElementById("idPrecoProduto").value)
+            let precoVenda
+            if(precoProduto < 20){
+                precoVenda = precoProduto + (precoProduto * 0.5)        
+            } else {
+                precoVenda = precoProduto + (precoProduto * 0.35)
+            }
+            document.getElementById("idPrecoVenda").value= "O valor da venda do produto é " + precoVenda
+        }
+    </script>
+</body>
+
+</html>

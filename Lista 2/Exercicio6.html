@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+6. Construa uma calculadora. O programa deverá receber 2 números e o caractere equivalente a um dos operadores aritméticos. 
+Efetuar a operação aritmética correspondente e apresentar o resultado. 
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idPrimeiroNumero" placeholder="Digite um número:"><br><br>
+            <input type="number" id="idSegundoNumero" placeholder="Digite outro número:"><br><br>
+            <input type="text" id="idOperadorAritmetico" placeholder="Digite a operação matemática:"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idResultado"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar(){
+            let primeiroNumero = Number(document.getElementById("idPrimeiroNumero").value)
+            let segundoNumero = Number(document.getElementById("idSegundoNumero").value)
+            let operadorAritmetico = document.getElementById("idOperadorAritmetico").value
+            let resultado
+            if(operadorAritmetico == "-"){
+                resultado = primeiroNumero - segundoNumero           
+            } else {
+                if(operadorAritmetico == "+"){
+                    resultado = primeiroNumero + segundoNumero 
+                } else {
+                    if(operadorAritmetico == "*"){
+                        resultado = primeiroNumero * segundoNumero 
+                    } else {
+                        if(operadorAritmetico == "/"){
+                            resultado = primeiroNumero / segundoNumero 
+                        }
+                    }
+                }
+            }
+            document.getElementById("idResultado").value= primeiroNumero + " "+ operadorAritmetico + " " + segundoNumero  + " = " + resultado
+        }
+    </script>
+</body>
+
+</html>

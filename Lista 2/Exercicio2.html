@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+2. Elabore um algoritmo que permita a entrada de três números e imprima o maior deles.
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idPrimeiroNumero" placeholder="Digite um número:"><br><br>
+            <input type="number" id="idSegundoNumero" placeholder="Digite outro número:"><br><br>
+            <input type="number" id="idTerceiroNumero" placeholder="Digite outro número:"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idMaior"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar(){
+            let primeiroNumero = Number(document.getElementById("idPrimeiroNumero").value)
+            let segundoNumero = Number(document.getElementById("idSegundoNumero").value)
+            let terceiroNumero = Number(document.getElementById("idTerceiroNumero").value)
+            let maior
+            if(primeiroNumero > segundoNumero && primeiroNumero > terceiroNumero){
+                maior = primeiroNumero           
+            } else {
+                if(segundoNumero > primeiroNumero && segundoNumero > terceiroNumero){
+                    maior = segundoNumero
+                } else {
+                    maior = terceiroNumero
+                }
+            }
+            document.getElementById("idMaior").value= "O maior número é o " + maior
+        }
+    </script>
+</body>
+
+</html>

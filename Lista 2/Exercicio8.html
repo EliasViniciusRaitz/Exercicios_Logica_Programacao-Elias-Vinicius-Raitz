@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+8.	Um comerciante comprou um produto e quer vende-lo com um lucro de 50% se o valor da compra for menor que R$ 20,00. Caso contrário, 
+o lucro será de 35%. Entrar com o valor do produto e imprimir o valor de venda.
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idPrecoProduto" placeholder="Digite o preço do produto:"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idPrecoVenda"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar(){
+            let precoProduto = Number(document.getElementById("idPrecoProduto").value)
+            let precoVenda
+            if(precoProduto < 20){
+                precoVenda = precoProduto + (precoProduto * 0.5)        
+            } else {
+                precoVenda = precoProduto + (precoProduto * 0.35)
+            }
+            document.getElementById("idPrecoVenda").value= "O valor da venda do produto é " + precoVenda
+        }
+    </script>
+</body>
+
+</html>

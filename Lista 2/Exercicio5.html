@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!---
+5. Elabore um algoritmo para entrar com três números e imprimi-los em ordem decrescente (suponha números diferentes).
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idPrimeiroNumero" placeholder="Digite um número:"><br><br>
+            <input type="number" id="idSegundoNumero" placeholder="Digite outro número:"><br><br>
+            <input type="number" id="idTerceiroNumero" placeholder="Digite outro número:"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idSaida"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar() {
+            let primeiroNumero = Number(document.getElementById("idPrimeiroNumero").value)
+            let segundoNumero = Number(document.getElementById("idSegundoNumero").value)
+            let terceiroNumero = Number(document.getElementById("idTerceiroNumero").value)
+            
+            if (primeiroNumero < segundoNumero && primeiroNumero < terceiroNumero && segundoNumero < terceiroNumero) {
+                document.getElementById("idSaida").value = terceiroNumero + " - " + segundoNumero + " - " + primeiroNumero
+            } else {
+                if (primeiroNumero < segundoNumero && primeiroNumero < terceiroNumero && terceiroNumero < segundoNumero) {
+                    document.getElementById("idSaida").value = segundoNumero + " - " + terceiroNumero + " - " + primeiroNumero
+                } else {
+                    if (segundoNumero < primeiroNumero && segundoNumero < terceiroNumero && primeiroNumero < terceiroNumero) {
+                        document.getElementById("idSaida").value = terceiroNumero + " - " + primeiroNumero + " - " + segundoNumero
+                    } else {
+                        if (segundoNumero < primeiroNumero && segundoNumero < terceiroNumero && terceiroNumero < primeiroNumero) {
+                            document.getElementById("idSaida").value = primeiroNumero + " - " + terceiroNumero + " - " + segundoNumero
+                        } else {
+                            if (terceiroNumero < primeiroNumero && terceiroNumero < segundoNumero && primeiroNumero < segundoNumero) {
+                                document.getElementById("idSaida").value = segundoNumero + " - " + primeiroNumero + " - " + terceiroNumero
+                            } else {
+                                document.getElementById("idSaida").value = primeiroNumero + " - " + segundoNumero + " - " + terceiroNumero
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
