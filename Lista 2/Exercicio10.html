@@ -52,16 +52,23 @@
             let senha3 = "123Trocar"
             let usuario = document.getElementById("idUsuario").value
             let senha = document.getElementById("idSenha").value
-            if((usuario == usuario1 && senha == senha1) || (usuario == usuario2 && senha == senha2) || (usuario == usuario3 && senha == 
-            senha3)){
-                document.getElementById("idSaidaLogin").value= "Acesso Permitido!!"
-            } else {
-                if((usuario == usuario1 && senha != senha1) || (usuario == usuario2 && senha != senha2) || (usuario == usuario3 && senha != 
-                senha3)){
-                    document.getElementById("idSaidaLogin").value= "Senha incorreta!!"     
+            let contador = 0
+            while (contador < 3) {
+                if ((usuario == usuario1 && senha == senha1) || (usuario == usuario2 && senha == senha2) || (usuario == usuario3 && senha ==
+                    senha3)) {
+                    document.getElementById("idSaidaLogin").value = "Acesso Permitido!!"
                 } else {
-                    document.getElementById("idSaidaLogin").value= "Usuário não cadastrado!!"     
+                    if ((usuario == usuario1 && senha != senha1) || (usuario == usuario2 && senha != senha2) || (usuario == usuario3 && senha !=
+                        senha3)) {
+                        document.getElementById("idSaidaLogin").value = "Senha incorreta!!"
+                        contador+=1
+                    } else {
+                        document.getElementById("idSaidaLogin").value = "Usuário não cadastrado!!"
+                    }
                 }
+            }
+            if(contador == 3){
+                document.getElementById("idSaidaLogin").value = "Excesso de tentativas!!  Bloqueado !!"
             }
         }
     </script>
