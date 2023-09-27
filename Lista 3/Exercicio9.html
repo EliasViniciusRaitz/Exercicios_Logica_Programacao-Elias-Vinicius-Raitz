@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+9. Crie um programa que leia o tamanho de três segmentos de reta. 
+Analise seus comprimentos e diga se é possível formar um triângulo com essas retas. Matematicamente, 
+para três segmentos formarem um triângulo, o comprimento de cada lado deve ser menor que a soma dos 
+outros dois.
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idPrimeiraReta" placeholder="Digite o tamanho da primeira reta:"><br><br>
+            <input type="number" id="idSegundaReta" placeholder="Digite o tamanho da segunda reta:"><br><br>
+            <input type="number" id="idTerceiraReta" placeholder="Digite o tamanho da terceira reta:"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idTriangulo"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar() {
+            let primeiraReta = Number(document.getElementById("idPrimeiraReta").value)
+            let segundaReta = Number(document.getElementById("idSegundaReta").value)
+            let terceiraReta = Number(document.getElementById("idTerceiraReta").value)
+            if((primeiraReta < segundaReta + terceiraReta) && (segundaReta < primeiraReta + terceiraReta) && 
+            (terceiraReta < segundaReta + primeiraReta)){
+                document.getElementById("idTriangulo").value="É possível formar um triângulo com essas retas!"
+            } else {
+                document.getElementById("idTriangulo").value="Não é possível formar um triângulo com essas retas!"
+            }
+        }
+    </script>
+</body>
+
+</html>

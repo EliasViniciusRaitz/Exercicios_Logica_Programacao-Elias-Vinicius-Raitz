@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+7. Numa promoção exclusiva para o Dia da Mulher, uma loja quer dar descontos para todos, mas especialmente para mulheres. 
+Faça um programa que leia nome, sexo e o valor das compras do cliente e calcule o preço com desconto. Sabendo que:
+
+- Homens ganham 5% de desconto
+- Mulheres ganham 13% de desconto
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="text" id="idNome" placeholder="Digite seu nome:"><br><br>
+
+            <label for="idSexo">Selecione seu sexo:</label><br>
+
+            <input type="radio" name="nameSexo" id="idMulher" value="mulher" checked>
+            <label for="idMulher" >Mulher</label><br>
+
+            <input type="radio" name="nameSexo" id="idHomem" value="homem">
+            <label for="idHomem" >Homem</label><br><br>
+
+            <input type="number" id="idValorCompra" placeholder="Digite o valor da compra:"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idSaida"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar() {
+            let nome = document.getElementById("idNome").value
+            let valorCompra = Number(document.getElementById("idValorCompra").value)
+            let precoFinal
+            if(document.querySelector("input[name=nameSexo]:checked").value == "mulher"){
+                precoFinal = valorCompra - (valorCompra * 0.13)
+                document.getElementById("idSaida").value= nome + ", o valor total da sua compra é R$" + precoFinal
+            } else {
+                precoFinal = valorCompra - (valorCompra * 0.05)
+                document.getElementById("idSaida").value= nome + ", o valor total da sua compra é R$" + precoFinal
+            }
+        }
+    </script>
+</body>
+
+</html>

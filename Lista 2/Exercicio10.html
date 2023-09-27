@@ -44,21 +44,23 @@
 
     <script>
         function confirmar() {
+            let usuario1 = "Aluno1"
+            let usuario2 = "Aluno2"
+            let usuario3 = "Aluno3"
+            let senha1 = "Trocar123"
+            let senha2 = "Senha@123"
+            let senha3 = "123Trocar"
             let usuario = document.getElementById("idUsuario").value
             let senha = document.getElementById("idSenha").value
-            if (usuario != "Aluno1" && usuario != "Aluno2" && usuario != "Aluno3" && senha != "Trocar123" && senha != "Senha@123" &&
-                senha != "123Trocar") {
-                document.getElementById("idSaidaLogin").value = "Usuário não cadastrado!!"
+            if((usuario == usuario1 && senha == senha1) || (usuario == usuario2 && senha == senha2) || (usuario == usuario3 && senha == 
+            senha3)){
+                document.getElementById("idSaidaLogin").value= "Acesso Permitido!!"
             } else {
-                if ((usuario == "Aluno1" && senha == "Trocar123") || (usuario == "Aluno2" && senha == "Senha@123") || (usuario ==
-                        "Aluno3" && senha == "123Trocar")) {
-                            document.getElementById("idSaidaLogin").value = "Acesso Permitido!!"
+                if((usuario == usuario1 && senha != senha1) || (usuario == usuario2 && senha != senha2) || (usuario == usuario3 && senha != 
+                senha3)){
+                    document.getElementById("idSaidaLogin").value= "Senha incorreta!!"     
                 } else {
-                    if ((usuario == "Aluno1" || usuario != "Aluno2" || usuario != "Aluno3") && senha != "Trocar123" && senha != 
-                    "Senha@123" && senha != "123Trocar") { document.getElementById("idSaidaLogin").value = "Senha incorreta!!"
-                    } else {
-                        document.getElementById("idSaidaLogin").value = " gfdfng!"
-                    }
+                    document.getElementById("idSaidaLogin").value= "Usuário não cadastrado!!"     
                 }
             }
         }

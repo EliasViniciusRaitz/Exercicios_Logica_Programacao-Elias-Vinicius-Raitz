@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+8. Faça um algoritmo que pergunte a distância que um passageiro deseja percorrer em Km. Calcule o preço da passagem, 
+cobrando R$0.50 por Km para viagens até 200Km e R$0.45 para viagens mais longas.
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idDistancia" placeholder="Digite a distância a percorrer (Km):"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idPrecoPassagem"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar() {
+            let distancia = Number(document.getElementById("idDistancia").value)
+            let precoPassagem
+            if(distancia > 200){
+                precoPassagem = distancia * 0.45
+                document.getElementById("idPrecoPassagem").value=" O preço da passagem é " + precoPassagem
+            } else {
+                precoPassagem = distancia * 0.5
+                document.getElementById("idPrecoPassagem").value=" O preço da passagem é " + precoPassagem
+            }
+        }
+    </script>
+</body>
+
+</html>

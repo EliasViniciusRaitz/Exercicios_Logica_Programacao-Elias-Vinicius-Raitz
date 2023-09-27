@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+4. Desenvolva um programa que leia um número inteiro e mostre se ele é PAR ou ÍMPAR.
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idNumero" placeholder="Digite um número:"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idParImpar"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar() {
+            let numero = Number(document.getElementById("idNumero").value)
+            resultado = numero % 2
+            if(resultado == 0){
+                document.getElementById("idParImpar").value= numero + " é par."
+            } else {
+                document.getElementById("idParImpar").value= numero + " é ímpar."
+            }
+        }
+    </script>
+</body>
+
+</html>

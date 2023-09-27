@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+6. Escreva um programa que leia o ano de nascimento de um rapaz e mostre a sua situação em relação ao alistamento militar.
+- Se estiver antes dos 18 anos, mostre em quantos anos faltam para o alistamento.
+- Se já tiver depois dos 18 anos, mostre quantos anos já se passaram do alistamento.
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idAnoNascimento" placeholder="Digite o ano de seu Nascimento:"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idAlistamento"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar() {
+            let anoNascimento = Number(document.getElementById("idAnoNascimento").value)
+            let idade = 2023 - anoNascimento
+            let alistamento
+            if(idade < 18){
+                alistamento = 18 - idade
+                document.getElementById("idAlistamento").value="Falta " + alistamento + " ano(s) para você realizar seu Alistamento Militar"
+            } else {
+                if(idade > 18){
+                    alistamento = idade - 18
+                    document.getElementById("idAlistamento").value="Passou " + alistamento + " ano(s) após o seu Alistamento Militar"
+                } else {
+                    document.getElementById("idAlistamento").value="É ano de você realizar o seu Alistamento Militar, se não o fez ainda, realize-o" 
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

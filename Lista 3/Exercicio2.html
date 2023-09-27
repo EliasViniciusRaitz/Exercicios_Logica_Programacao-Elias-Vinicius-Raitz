@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+2. Faça um programa que leia o ano de nascimento de uma pessoa, calcule a idade dela e depois mostre se ela pode ou não votar.
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idAnoNascimento" placeholder="Digite o ano do seu nascimento:"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idVotar"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar() {
+            let anoNascimento = document.getElementById("idAnoNascimento").value
+            let idade = 2023 - anoNascimento
+            if(idade < 16){
+                document.getElementById("idVotar").value="Você ainda não pode votar !"
+            } else {
+                document.getElementById("idVotar").value="Você ja pode votar !!"
+            }
+        }
+    </script>
+</body>
+
+</html>

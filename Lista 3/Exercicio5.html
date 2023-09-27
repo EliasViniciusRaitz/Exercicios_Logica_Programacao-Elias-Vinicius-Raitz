@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+5. Faça um algoritmo que leia um determinado ano e mostre se ele é ou não BISSEXTO. 
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idAno" placeholder="Digite um ano:"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idBissexto"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar() {
+            let ano = Number(document.getElementById("idAno").value)
+            let verificarAno = ano % 4
+            if(verificarAno == 0){
+                document.getElementById("idBissexto").value= ano + " é Bissexto."
+            } else {
+                document.getElementById("idBissexto").value= ano + " não é Bissexto."
+            }
+        }
+    </script>
+</body>
+
+</html>

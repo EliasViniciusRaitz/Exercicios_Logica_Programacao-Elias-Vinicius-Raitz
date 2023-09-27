@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+3. Crie um algoritmo que leia o nome e as duas notas de um aluno, calcule a sua média e mostre na tela. No final, analise a média e 
+mostre se o aluno teve ou não um bom aproveitamento (se ficou acima da média 7.0).
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idPrimeiraNota" placeholder="Digite a primeira nota:"><br><br>
+            <input type="number" id="idSegundaNota" placeholder="Digite a segunda nota:"><br><br>
+            <input type="button" value="Confirmar" onclick="confirmar()"><br><br>
+            <output id="idAproveitamento"></output>
+        </form>
+    </main>
+
+    <script>
+        function confirmar() {
+            let primeiraNota = Number(document.getElementById("idPrimeiraNota").value)
+            let segundaNota = Number(document.getElementById("idSegundaNota").value)
+            let media = (primeiraNota + segundaNota) / 2
+            if(media < 7){
+                document.getElementById("idAproveitamento").value="Você obteve um mal rendimento, sua média foi: " + media
+            } else {
+                document.getElementById("idAproveitamento").value="Você obteve um bom rendimento, sua média foi: " + media 
+            }
+        }
+    </script>
+</body>
+
+</html>
