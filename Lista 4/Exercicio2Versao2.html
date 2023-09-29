@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!---
+2. Faça um algoritmo que mostre na tela a seguinte contagem:
+"Inicio 15 14 13 12 11 10 9 8 7 6 5 4 3 Acabou!" 
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="button" value="Iniciar" onclick="iniciar()"><br><br>
+            <output id="idSaidaNumeros"></output>
+        </form>
+    </main>
+
+    <script>
+        function iniciar() {
+            let numero = 15
+            console.log("Início ")
+            let saidaLabel = "Início "
+            while (numero >= 3) {
+                console.log(numero + " ")
+                saidaLabel = saidaLabel + numero + " "
+                numero--
+            }
+            console.log("Acabou!")
+            document.getElementById("idSaidaNumeros").value = saidaLabel + "Acabou!"
+        }
+    </script>
+</body>
+
+</html>

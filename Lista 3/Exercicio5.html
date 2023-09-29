@@ -23,8 +23,10 @@
     <script>
         function confirmar() {
             let ano = Number(document.getElementById("idAno").value)
-            let verificarAno = ano % 4
-            if(verificarAno == 0){
+            let resto4 = ano % 4
+            let resto100 = ano % 100
+            let resto400 = ano % 400
+            if((resto4 == 0 && resto100 != 0) || resto400 == 0){
                 document.getElementById("idBissexto").value= ano + " é Bissexto."
             } else {
                 document.getElementById("idBissexto").value= ano + " não é Bissexto."

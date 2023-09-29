@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+9. O programa acima vai ter um problema quando digitarmos o primeiro valor maior que o último. 
+Resolva esse problema com um código que funcione em qualquer situação.
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idPrimeiroNumero" placeholder="Digite o primeiro número:">
+            <input type="number" id="idUltimoNumero" placeholder="Digite o último número:">
+            <input type="number" id="idIncremento" placeholder="Digite o incremento:">
+            <input type="button" value="Iniciar" onclick="iniciar()"><br><br>
+            <output id="idSaidaNumeros"></output>
+        </form>
+    </main>
+
+    <script>
+        function iniciar() {
+            let primeiroNumero = Number(document.getElementById("idPrimeiroNumero").value)
+            let ultimoNumero = Number(document.getElementById("idUltimoNumero").value)
+            let incremento = Number(document.getElementById("idIncremento").value)
+            let saidaLabel = " "
+            if(primeiroNumero > ultimoNumero){
+                let auxiliar = primeiroNumero
+                primeiroNumero = ultimoNumero
+                ultimoNumero = auxiliar
+
+            }
+            for (numero = primeiroNumero; numero <= ultimoNumero; numero = numero + incremento) {
+                console.log(numero + " ")
+                saidaLabel = saidaLabel + numero + " "
+            }
+            console.log("Acabou!")
+            document.getElementById("idSaidaNumeros").value = saidaLabel + "Acabou!"
+        }
+    </script>
+</body>
+
+</html>

@@ -25,7 +25,9 @@
     <script>
         function confirmar() {
             let anoNascimento = Number(document.getElementById("idAnoNascimento").value)
-            let idade = 2023 - anoNascimento
+            let dataAtual = new Date()
+            let anoAtual = dataAtual.getFullYear()
+            let idade = anoAtual - anoNascimento
             let alistamento
             if(idade < 18){
                 alistamento = 18 - idade

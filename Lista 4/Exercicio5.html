@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!---
+5. Faça um algoritmo que pergunte ao usuário um número inteiro e positivo qualquer e mostre uma contagem até esse valor:  
+Ex: Digite um valor: 77  
+Contagem: "Inicio 1 2 3 4 5 6 7 ... 75 76 77 Acabou!" 
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idNumero" placeholder="Digite um número:">
+            <input type="button" value="Iniciar" onclick="iniciar()"><br><br>
+            <output id="idSaidaNumeros"></output>
+        </form>
+    </main>
+
+    <script>
+        function iniciar() {
+            let numero = Number(document.getElementById("idNumero").value)
+            console.log("Início ")
+            let saidaLabel = "Início "
+            for (let i = 0; i <= numero; i++) {
+                console.log(i + " ")   
+                saidaLabel = saidaLabel + i + " "          
+            }
+            console.log("Acabou!")
+            document.getElementById("idSaidaNumeros").value = saidaLabel + "Acabou!"
+        }
+    </script>
+</body>
+
+</html>

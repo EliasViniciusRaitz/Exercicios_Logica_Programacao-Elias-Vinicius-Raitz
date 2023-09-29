@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!---
+4. Desenvolva um programa que mostre na tela a seguinte contagem: "Inicio 100 95 90 85 80 ... 0 Acabou!"
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="button" value="Iniciar" onclick="iniciar()"><br><br>
+            <output id="idSaidaNumeros"></output>
+        </form>
+    </main>
+
+    <script>
+        function iniciar() {
+            console.log("Início ")
+            let saidaLabel = "Início "
+            for (let numero = 100; numero > 0 ; numero = numero - 5) {
+                console.log(numero + " ")  
+                saidaLabel = saidaLabel + numero + " "           
+            }
+            console.log("Acabou!")
+            document.getElementById("idSaidaNumeros").value = saidaLabel + "Acabou!"
+        }
+    </script>
+</body>
+
+</html>

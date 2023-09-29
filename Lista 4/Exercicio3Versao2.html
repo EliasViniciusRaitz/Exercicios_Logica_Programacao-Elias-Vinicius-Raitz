@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!---
+3. Crie um aplicativo que mostre na tela a seguinte contagem:
+"Inicio 0 4 8 12 16 20 Acabou!"
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="button" value="Iniciar" onclick="iniciar()"><br><br>
+            <output id="idSaidaNumeros"></output>
+        </form>
+    </main>
+
+    <script>
+        function iniciar() {
+            let numero = 0
+            console.log("Início ")
+            let saidaLabel = "Início "
+            while (numero <= 20) {
+                console.log(numero + " ")    
+                saidaLabel = saidaLabel + numero + " "   
+                numero += 4      
+            }
+            console.log("Acabou!")
+            document.getElementById("idSaidaNumeros").value = saidaLabel + "Acabou!"
+        }
+    </script>
+</body>
+
+</html>

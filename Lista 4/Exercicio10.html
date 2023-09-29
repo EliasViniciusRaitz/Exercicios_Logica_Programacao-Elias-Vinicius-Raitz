@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+10. Crie um programa que leia os valores inicial e final de um intervalo e imprima todos os valores impares ou pares contidos no intervalo. 
+- O usuário deve poder escolher entre impares e pares.
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idPrimeiroNumero" placeholder="Digite o primeiro número:">
+            <input type="number" id="idUltimoNumero" placeholder="Digite o último número:"><br><br>
+
+            <label for="">Imprimir:</label><br>
+            <input type="radio" id="idImpares" name="nameNumeros" value="impar">
+            <label for="idImpares">ìmpares</label>
+            <input type="radio" id="idPares" name="nameNumeros" value="par">
+            <label for="idPares">Pares</label><br><br>
+
+            <input type="button" value="Iniciar" onclick="iniciar()"><br><br>
+            <output id="idSaidaNumeros"></output>
+        </form>
+    </main>
+
+    <script>
+        function iniciar() {
+            let primeiroNumero = Number(document.getElementById("idPrimeiroNumero").value)
+            let ultimoNumero = Number(document.getElementById("idUltimoNumero").value)
+            let imparOuPar = document.querySelector("input[name=nameNumeros]:checked").value
+            let saidaLabel = " "
+            let numero 
+            if(imparOuPar == "impar"){
+                for(numero = primeiroNumero; numero <= ultimoNumero; numero++){
+                    if(numero % 2 == 0){
+
+                    } else {
+                        console.log(numero + " ")
+                        saidaLabel = saidaLabel + numero + " "
+                    }
+                }
+            } else {
+                for(numero = primeiroNumero; numero <= ultimoNumero; numero++){
+                    if(numero % 2 == 0){
+                        console.log(numero + " ")
+                        saidaLabel = saidaLabel + numero + " "
+                    } else {
+
+                    }
+                }
+            }
+            console.log("Acabou!")
+            document.getElementById("idSaidaNumeros").value= saidaLabel + " Acabou!"
+        }
+    </script>
+</body>
+
+</html>
