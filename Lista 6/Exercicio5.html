@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+5. Crie um programa que preencha automaticamente um vetor numérico com 20 números gerados aleatoriamente pelo computador e depois 
+mostre os valores gerados na tela (console.log).
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="button" value="Iniciar" onclick="iniciar()"><br><br>
+            <output id="idSaidaNumeros"></output>
+        </form>
+    </main>
+
+    <script>
+        function iniciar() {
+            let vetorNumeros = []
+            for(let i = 0; i < 20; i++){
+                let numeroAleatorio = parseInt(Math.random() * 1000)
+                vetorNumeros[i] = numeroAleatorio
+            }
+            console.log("Vetor ["+ vetorNumeros + "]")
+            document.getElementById("idSaidaNumeros").value="Vetor ["+ vetorNumeros + "]"     
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+6. Faça um programa que leia "n" nomes de pessoas e guarde-os em um vetor. No final, mostre uma listagem com 
+todos os nomes informados, na ordem inversa daquela em que eles foram informados.
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <label for="idNomes"></label>
+            <input type="text" id="idNomes" name="nameNomes"><br><br>
+
+            <input type="button" value="Registrar" onclick="registrar()"><br><br>
+            <input type="button" value="Relatorio" onclick="relatorio()"><br><br>
+            <output id="idSaidaNomes"></output>
+        </form>
+    </main>
+
+    <script>
+        var vetorNomes = []
+
+        function registrar() {
+            let nome = document.getElementById("idNomes").value
+            vetorNomes.unshift(nome)
+        }
+
+        function relatorio() {
+            console.log("Vetor [" + vetorNomes + "]")
+            document.getElementById("idSaidaNomes").value = "Vetor [" + vetorNomes + "]"
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+3. Desenvolva um programa que faça o sorteio de 20 números entre 0 e 10 e mostre na tela:
+a) Quais foram os números sorteados  
+b) Quantos números estão acima de 5  
+c) Quantos números são divisíveis por 3 
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="button" value="Iniciar" onclick="iniciar()"><br><br>
+            <output id="idSaidaNumeros"></output>
+        </form>
+    </main>
+
+    <script>
+        function iniciar() {
+            let saidaLabel = " " 
+            let quantidadeAcima5 = 0
+            let quantidadeDivisiveis3 = 0          
+            for(let numero = 0; numero <= 20; numero++){
+                let numeroAleatorio = parseInt(Math.random() * 10)
+                console.log(numeroAleatorio + " ")
+                saidaLabel = saidaLabel + numeroAleatorio + " "
+                if(numeroAleatorio > 5){
+                    quantidadeAcima5++
+                } else {
+                    if(numeroAleatorio % 3 == 0){
+                        quantidadeDivisiveis3++
+                    }
+                }
+            } 
+            document.getElementById("idSaidaNumeros").value= saidaLabel + "   . Quantidade de números maiores que 5: " + quantidadeAcima5 +
+            "   . Quantidade de números divisíveis por 3: " + quantidadeDivisiveis3 
+            console.log("Quantidade de números maiores que 5: " + quantidadeAcima5)
+            console.log("Quantidade de números divisíveis por 3: " + quantidadeDivisiveis3)          
+        }
+    </script>
+</body>
+
+</html>

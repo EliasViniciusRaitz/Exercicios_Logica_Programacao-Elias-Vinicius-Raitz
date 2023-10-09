@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+2. Crie um programa que leia os valores inicial e final de um intervalo e imprima todos os números primos contidos no intervalo.
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <input type="number" id="idNumeroInicial" placeholder="Digite o número inicial:">
+            <input type="number" id="idNumeroFinal" placeholder="Digite o número final:"><br><br>
+
+            <input type="button" value="Iniciar" onclick="iniciar()"><br><br>
+            <output id="idSaidaNumeros"></output>
+        </form>
+    </main>
+
+    <script>
+        function iniciar() {
+            let numeroInicial = Number(document.getElementById("idNumeroInicial").value)
+            let numeroFinal = Number(document.getElementById("idNumeroFinal").value)
+            let saidaLabel = " "
+            let isPrimo 
+            for(let numero = numeroInicial; numero <= numeroFinal; numero++){
+                isPrimo = true
+                for(let numero2 = 2; numero2 < numero; numero2++){
+                    if(numero % numero2 == 0){
+                        isPrimo = false
+                    }
+                }
+                if(isPrimo){
+                    if(numero != 1){
+                    saidaLabel = saidaLabel + numero + " "
+                    console.log(numero + " ")
+                    }
+                }
+            }
+            document.getElementById("idSaidaNumeros").value= saidaLabel 
+        }
+    </script>
+</body>
+
+</html>

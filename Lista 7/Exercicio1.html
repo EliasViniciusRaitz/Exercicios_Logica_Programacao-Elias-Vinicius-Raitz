@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!---
+1. Faça um algoritmo que leia a nota de "n" alunos de uma turma e guarde-as em um vetor. No final, mostre:  
+a) Qual e a media da turma   
+b) Quantos alunos estão acima da média da turma  
+c) Qual foi a maior nota digitada  
+d) Em que posições a maior nota aparece  
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <label for="idNota">Digite a nota do aluno:</label>
+            <input type="number" id="idNota" name="nameNota"><br><br>
+
+            <input type="button" value="Registrar" onclick="registrar()"><br><br>
+            <input type="button" value="Relatório" onclick="relatorio()"><br><br>
+            <output id="idSaidaAlunos"></output>
+        </form>
+    </main>
+
+    <script>
+        var notas = []
+        var maioresNotas = []
+
+        function registrar() {
+            notas.unshift(Number(document.getElementById("idNota").value))
+        }
+
+        function relatorio(){
+            let media 
+            let quantidadeAcimaMedia = 0
+            let maiorNota
+            let posicoesMaiorNota
+            let somaNotas = 0
+
+            for(let i=0; i < notas.length; i++){
+                somaNotas = somaNotas + notas[i]
+                if(notas[i] > notas[i+1]){
+                    maiorNota = notas[i]
+                } else {
+                    if
+                }
+            }
+            media = somaNotas / notas.length
+        }
+    </script>
+</body>
+
+</html>

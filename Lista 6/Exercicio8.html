@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!---
+8. Faça um algoritmo que preencha um vetor de 30 posições com números entre 1 e 15 sorteados pelo computador. Depois disso, peça para 
+o usuário digitar um número (chave) e seu programa deve mostrar em que posições essa chave foi encontrada. 
+Mostre também quantas vezes a chave foi sorteada.
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <label for="idNumero">Digite um número de 1 a 15:</label>
+            <input type="number" id="idNumero" name="nameNumero"><br><br>
+
+            <input type="button" value="Registrar" onclick="iniciar()"><br><br>
+            <output id="idSaidaNumeros"></output>
+        </form>
+    </main>
+
+    <script>
+        var vetorNumeros = []
+        var numeroAleatorio
+        for (let i = 0; i < 30; i++) {
+            numeroAleatorio = parseInt(Math.random()   * 15)
+            vetorNumeros[i] = numeroAleatorio
+        }
+
+        function iniciar() {
+            let numeroDigitado = Number(document.getElementById("idNumero").value)
+            let quantidadeEncontrado = 0
+            let indiceEncontrados = []
+            for(let i=0; i < 30; i++){
+                if(vetorNumeros[i] == numeroDigitado){
+                    indiceEncontrados.unshift(i)
+                    quantidadeEncontrado++
+                }    
+            }
+
+            console.log("Posições no vetor onde foi encontrado [" + indiceEncontrados + "]")
+            console.log("Quantidade de vezes em que foi encontrado: " + quantidadeEncontrado)
+            console.log("VETOR: " + vetorNumeros)
+
+            document.getElementById("idSaidaNumeros").value ="Posições no vetor onde foi encontrado [" + indiceEncontrados + "]" +
+            "Quantidade de vezes em que foi encontrado: " + quantidadeEncontrado
+        }
+    </script>
+</body>
+
+</html>

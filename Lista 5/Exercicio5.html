@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+5. Crie um aplicativo que leia o preço de 'n' produtos. No final, mostre na tela qual foi o maior e qual foi o menor preço digitados.
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <label for="idPrecoProdutos"></label>
+            <input type="number" id="idPrecoProdutos" name="namePrecoProdutos"><br><br>
+
+            <input type="button" value="Registrar" onclick="registrar()"><br><br>
+            <input type="button" value="Relatorio" onclick="relatorio()"><br><br>
+            <output id="idSaidaProdutos"></output>
+        </form>
+    </main>
+
+    <script>
+        var menorPreco = 9999999
+        var maiorPreco = 0
+
+        function registrar() {
+            let preco = Number(document.getElementById("idPrecoProdutos").value)
+            if(preco > maiorPreco){
+                maiorPreco = preco
+            } 
+            if(preco < menorPreco){
+                menorPreco = preco
+            }
+            document.setElementById("idPrecoProdutos").innerText=" "
+        }
+
+        function relatorio() {
+            console.log("Menor preço: " + menorPreco)
+            console.log("Maior preço: " + maiorPreco)
+            document.getElementById("idSaidaProdutos").value="Menor preço: " + menorPreco + "          Maior preço: " + maiorPreco
+        }
+    </script>
+</body>
+
+</html>

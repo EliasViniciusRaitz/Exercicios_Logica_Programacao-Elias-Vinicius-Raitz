@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+1. Crie um algoritmo que mostre na tela todos os números entre 1 e 100 que sejam múltiplos de 3 ou 5.
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+
+            <input type="button" value="Iniciar" onclick="iniciar()"><br><br>
+            <output id="idSaidaNumeros"></output>
+
+        </form>
+    </main>
+
+    <script>
+        function iniciar() {
+            console.log("Números múltiplos de 3 ou 5: ")
+            let saidaLabel = "Números múltiplos de 3 ou 5: "
+            for(numero = 1; numero <= 100; numero++){
+                if(numero % 3 == 0 || numero % 5 == 0){
+                    console.log(numero + " ")
+                    saidaLabel = saidaLabel + numero + " "
+                }
+            }
+            document.getElementById("idSaidaNumeros").value= saidaLabel 
+        }
+    </script>
+</body>
+
+</html>

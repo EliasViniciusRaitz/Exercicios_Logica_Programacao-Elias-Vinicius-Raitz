@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!---
+10. Elaborar um programa para a casa de câmbio que receba as cotações do dia e efetue a conversão de uma moeda para outra. 
+O programa deverá permitir conversões entre Real, Dólar Americano, Euro, Libra Esterlina e Dólar Canadense. 
+- O usuário pode selecionar o tipo de moeda de entrada e selecionar o tipo para o qual ele deseja converter.
+
+-> entra -- Dolar -- Destino 
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <label for="">Escolha uma moeda:</label><br>
+
+            <input type="radio" id="idReal1" name="nameMoeda1" value="real1">
+            <label for="idReal1">Real</label><br>
+            <input type="radio" id="idDolarAmericano1" name="nameMoeda1" value="dolarAmericano1">
+            <label for="idDolarAmericano1">Dólar Americano</label><br>
+            <input type="radio" id="idEuro1" name="nameMoeda1" value="euro1">
+            <label for="idEuro1">Euro</label><br>
+            <input type="radio" id="idLibra1" name="nameMoeda1" value="libra1">
+            <label for="idReal1">Libra Esterlina</label><br>
+            <input type="radio" id="idDolarCanadense1" name="nameMoeda1" value="dolarCanadense1">
+            <label for="idReal1">Dólar Canadense</label><br><br>
+
+            <label for="idValor">Digite um valor $:</label>
+            <input type="number" id="idValor" name="nameValor"><br><br>
+
+            <label for="">Para qual moeda você deseja realizar o câmbio:</label><br>
+
+            <input type="radio" id="idReal2" name="nameMoeda2" value="real2">
+            <label for="idReal2">Real</label><br>
+            <input type="radio" id="idDolarAmericano2" name="nameMoeda2" value="dolarAmericano2">
+            <label for="idDolarAmericano2">Dólar Americano</label><br>
+            <input type="radio" id="idEuro2" name="nameMoeda2" value="euro2">
+            <label for="idEuro2">Euro</label><br>
+            <input type="radio" id="idLibra2" name="nameMoeda2" value="libra2">
+            <label for="idReal2">Libra Esterlina</label><br>
+            <input type="radio" id="idDolarCanadense2" name="nameMoeda2" value="dolarCanadense2">
+            <label for="idReal2">Dólar Canadense</label><br><br>
+
+            <input type="button" value="Converter" onclick="converter()"><br><br>
+            <output id="idSaidaMoeda"></output>
+        </form>
+    </main>
+
+    <script>
+        function converter() {
+            let moeda1 = document.querySelector("input[name=nameMoeda1]:checked").value
+            let valorDigitado = Number(document.getElementById("idValor").value)
+            let moeda2 = document.querySelector("input[name=nameMoeda2]:checked").value
+            let moedaComvertida
+            let moedaConvertidaDolar
+
+            if (moeda1 == "real1") {
+                moedaConvertidaDolar = valorDigitado / 5.15
+            } else {
+                if (moeda1 == "euro1") {
+                    moedaConvertidaDolar = valorDigitado / 1.06
+                } else {
+                    if (moeda1 == "libra1") {
+                        moedaConvertidaDolar = valorDigitado / 1.22
+                    } else {
+                        if (moeda1 == "dolarCanadense1") {
+                            moedaConvertidaDolar = valorDigitado / 0.73
+                        } else {
+                            moedaConvertidaDolar = valorDigitado
+                        }
+                    }
+                }
+            }
+
+            if (moeda2 == "real2") {
+                moedaComvertida = moedaConvertidaDolar * 5.15
+            } else {
+                if (moeda2 == "euro2") {
+                    moedaComvertida = moedaConvertidaDolar * 1.06
+                } else {
+                    if (moeda2 == "libra2") {
+                        moedaComvertida = moedaConvertidaDolar * 1.22
+                    } else {
+                        if (moeda2 == "dolarCanadense2") {
+                            moedaComvertida = moedaConvertidaDolar * 0.73
+                        } else {
+                            moedaComvertida = moedaConvertidaDolar
+                        }
+                    }
+                }
+            }
+            console.log("Moeda convertida: " + moedaComvertida)
+            document.getElementById("idSaidaMoeda").value = "Moeda convertida: " + moedaComvertida
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+6. Crie um algoritmo que leia a idade de 'n' pessoas, mostrando no final:  
+a) Qual é a média de idade do grupo  
+b) Quantas pessoas tem mais de 18 anos  
+c) Quantas pessoas tem menos de 5 anos  
+d) Qual foi a maior idade lida  
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <label for="idIdades"></label>
+            <input type="number" id="idIdades" name="nameIdades"><br><br>
+
+            <input type="button" value="Registrar" onclick="registrar()"><br><br>
+            <input type="button" value="Relatorio" onclick="relatorio()"><br><br>
+            <output id="idSaidaIdades"></output>
+        </form>
+    </main>
+
+    <script>
+        var maiorIdade = 0
+        var IdadesMaior18 = 0
+        var idadesMenor5 = 0
+        var todasIdades = 0
+
+        function registrar() {
+            let idade = Number(document.getElementById("idIdades").value)
+            if(idade > maiorIdade){
+                maiorIdade = idade 
+            } 
+            if(idade < 5){
+                idadesMenor5++
+            }
+            if(idade > 18){
+                IdadesMaior18++
+            }
+            todasIdades = todasIdades + idade
+        }
+
+        function relatorio() {
+            let quantidadePessoas = idadesMenor5 + IdadesMaior18
+            let mediaIdades = todasIdades / quantidadePessoas
+            console.log("Quantidade de pessoas com menor de 5 anos: " + idadesMenor5)
+            console.log("Quantidade de pessoas com mais de 18 anos: " + IdadesMaior18)
+            console.log("Maior Idade: " + maiorIdade)
+            console.log("Média das idades: " + mediaIdades)
+            document.getElementById("idSaidaIdades").value="Quantidade de pessoas com menor de 5 anos: " + idadesMenor5 + "!   Quantidade" +
+            " de pessoas com mais de 18 anos: " + IdadesMaior18 + "!   Maior Idade: " + maiorIdade + "!   Média das idades: " + mediaIdades
+        }
+    </script>
+</body>
+
+</html>

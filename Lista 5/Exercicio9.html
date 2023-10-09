@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+9. Crie um novo programa a partir do exercício anterior e permita que o usuário escolha em que unidade de medida ele deseja informar 
+a temperatura (C, F ou K). O programa deverá converter deverá converter a temperatura para as outras unidades de medida. 
+
+    Sendo C= Celsius, F= Fahrenheit e K = Kelvin 
+
+    Formulas fornecidas: 
+
+    K=C+273
+
+    K-273 = C
+
+    F=(9*C+160)/5 
+
+    ((F * 5)-160)/9 = C
+
+    ((F * 5)-160)/9 + 273 = K
+
+    F  = (((K - 273) * 9) + 160)/5
+
+    Referências: https://www.infoescola.com/fisica/conversao-de-escalas-termometricas/
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <label for="">Escolha uma medida de temperatura:</label><br>
+
+            <input type="radio" id="idCelsius1" name="nameMedidaTemperatura1" value="celsius1">
+            <label for="idCelsius1">Graus Celsius</label><br>
+            <input type="radio" id="idFahrenheit1" name="nameMedidaTemperatura1" value="fahrenheit1">
+            <label for="idFahrenheit1">Graus Fahrenheit</label><br>
+            <input type="radio" id="idKelvin1" name="nameMedidaTemperatura1" value="kelvin1">
+            <label for="idKelvin1">Kelvin</label><br><br>
+
+            <label for="idTemperatura">Digite uma temperatura:</label>
+            <input type="number" id="idTemperatura" name="nameTemperatura"><br><br>
+
+            <label for="">Para qual medida de temperatura você deseja converter?</label><br>
+
+            <input type="radio" id="idCelsius2" name="nameMedidaTemperatura2" value="celsius2">
+            <label for="idCelsius2">Graus Celsius</label><br>
+            <input type="radio" id="idFahrenheit2" name="nameMedidaTemperatura2" value="fahrenheit2">
+            <label for="idFahrenheit2">Graus Fahrenheit</label><br>
+            <input type="radio" id="idKelvin2" name="nameMedidaTemperatura2" value="kelvin2">
+            <label for="idKelvin2">Kelvin</label><br><br>
+
+            <input type="button" value="Converter" onclick="converter()"><br><br>
+            <output id="idSaidaTemperatura"></output>
+        </form>
+    </main>
+
+    <script>
+        function converter() {
+            let temperatura1 = document.querySelector("input[name=nameMedidaTemperatura1]:checked").value
+            let temperaturaDigitada = Number(document.getElementById("idTemperatura").value)
+            let temperatura2 = document.querySelector("input[name=nameMedidaTemperatura2]:checked").value
+            let temperaturaComvertida
+            if((temperatura1 == "celsius1" && temperatura2 == "celsius2") || (temperatura1 == "fahrenheit1" && temperatura2 == "fahrenheit2") || (temperatura1 == "kelvin1" && temperatura2 == "kelvin2")){
+                temperaturaComvertida = temperaturaDigitada
+            } else {
+                if(temperatura1 == "celsius1" && temperatura2 == "fahrenheit2"){
+                    temperaturaConvertida = (9 * temperaturaDigitada + 160) / 5   
+                } else {
+                    if(temperatura1 == "celsius1" && temperatura2 == "kelvin2"){
+                        temperaturaComvertida = temperaturaDigitada + 273
+                    } else {
+                        if(temperatura1 == "fahrenheit1" && temperatura2 == "kelvin2"){
+                            temperaturaComvertida = ((temperaturaDigitada * 5) - 160) / 9 + 273
+                        } else {
+                            if(temperatura1 == "fahrenheit1" && temperatura2 == "celsius2"){
+                                temperaturaComvertida = ((temperaturaDigitada * 5) - 160) / 9
+                            } else {
+                                if(temperatura1 == "kelvin1" && temperatura2 == "celsius2"){
+                                    temperaturaComvertida = temperaturaDigitada - 273
+                                } else {
+                                    temperaturaComvertida = (((temperaturaDigitada - 273) * 9) + 160) / 5
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            console.log("Temperatura convertida: " + temperaturaComvertida)
+            document.getElementById("idSaidaTemperatura").value = "Temperatura convertida: " + temperaturaComvertida
+        }
+    </script>
+</body>
+
+</html>

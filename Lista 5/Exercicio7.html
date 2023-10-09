@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<!---
+7. Em um jogo de adivinhação, o jogador deve descobrir um número entre 1 e 10 usando até três tentativas. A cada tentativa 
+o jogador é informado se o número foi descoberto, ou se ele é maior ou menor do que a tentativa. Se após três tentativas o jogador 
+não descobrir o número, então ele perde o jogo. Crie um algoritmo que implemente esse jogo.
+-->
+</head>
+
+<body>
+    <main>
+        <form action="">
+            <label for="idNumero"></label>
+            <input type="number" id="idNumero" name="nameNumero"><br><br>
+
+            <input type="button" value="Testar" onclick="testar()"><br><br>
+            <output id="idSaidaJogo"></output>
+        </form>
+    </main>
+
+    <script>
+        var numeroAleatorio = parseInt(Math.random() * 10)
+        var tentativas = 0
+        function testar() {
+            let numeroDigitado = Number(document.getElementById("idNumero").value)
+            if(numeroDigitado == numeroAleatorio){
+                console.log("Parabéns você acertou o número!!")
+                document.getElementById("idSaidaJogo").value="Parabéns você acertou o número!!"
+            } else {
+                if(numeroAleatorio < numeroDigitado){
+                    console.log("O número é menor do que a sua tentativa")
+                    document.getElementById("idSaidaJogo").value="O número é menor do que a sua tentativa"
+                } else {
+                    console.log("O número é maior do que a sua tentativa ")
+                    document.getElementById("idSaidaJogo").value="O número é maior do que a sua tentativa "
+                }
+            }
+            tentativas++
+            if(tentativas == 3){
+                console.log("GAME OVER, o número era o " + numeroAleatorio)
+                document.getElementById("idSaidaJogo").value="GAME OVER, o número era o " + numeroAleatorio
+            }
+        }
+    </script>
+</body>
+
+</html>
